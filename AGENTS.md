@@ -6,7 +6,7 @@ Read `PLAN.md` first for what this is and why. This file covers how the code is 
 
 | Path | What it is |
 | --- | --- |
-| `packages/in-source-companion/src/blocks.ts` | Finding and deleting `if (import.meta.vitest)` blocks with the TypeScript parser |
+| `./release/blocks.ts` | Finding and deleting `if (import.meta.vitest)` blocks with the TypeScript parser |
 | `…/test-only.ts` | Top-level statements only the tests use (transitively), with the quick fix that moves them into the block |
 | `…/check-scrub.ts` | The build comparison: shipped vs. tests deleted, then per file, then per statement |
 | `…/describe-report.ts` | A check report as text: shared by the CLI and the extension's output channel |
