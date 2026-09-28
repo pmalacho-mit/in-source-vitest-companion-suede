@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/pmalacho-mit/in-source-vitest-companion-suede
 	branch = release
-	commit = 197b117f092833f3bdd8e076db988369f07dc5f3
-	parent = d4fd4af25574886ed5701395e46adfdc212e80a3
+	commit = 147fca3ee47d9cb939d5bc10e45fc304c5a5c3ae
+	parent = 5e6dbb5fdbdc6e62fdc903b132acde7e73727eec
 	method = merge
 	cmdver = 0.4.9
