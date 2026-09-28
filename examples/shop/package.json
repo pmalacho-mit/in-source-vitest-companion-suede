@@ -1,0 +1,13 @@
+{
+  "name": "shop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "build": "vite build",
+    "check-scrub": "in-source-companion check-scrub"
+  },
+  "devDependencies": {
+    "in-source-companion": "*"
+  }
+}

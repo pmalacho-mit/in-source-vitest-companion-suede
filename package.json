@@ -1,0 +1,22 @@
+{
+  "name": "in-source-companion",
+  "version": "0.1.0",
+  "description": "Display pages, standalone test files, and a build-verified scrub check for Vitest in-source tests.",
+  "type": "module",
+  "exports": {
+    "./display": "./src/display.ts",
+    "./vite": "./src/plugin.ts",
+    "./codec": "./src/codec.ts",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "in-source-companion": "./src/cli.ts"
+  },
+  "dependencies": {
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  },
+  "peerDependencies": {
+    "vite": ">=8",
+    "vitest": ">=5"
+  }
+}

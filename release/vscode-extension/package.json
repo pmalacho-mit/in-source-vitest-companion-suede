@@ -1,0 +1,65 @@
+{
+  "name": "in-source-companion-vscode",
+  "displayName": "In-Source Companion",
+  "description": "Display pages, standalone test files, and a build-verified scrub check for Vitest in-source tests. Works alongside the Vitest extension.",
+  "version": "0.1.0",
+  "publisher": "pmalacho-mit",
+  "private": true,
+  "engines": { "vscode": "^1.88.0" },
+  "categories": ["Testing"],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "workspaceContains:**/.in-source-companion/displays.json"
+  ],
+  "contributes": {
+    "commands": [
+      { "command": "inSourceCompanion.showDisplay", "title": "Show Display", "category": "In-Source Companion", "icon": "$(graph)" },
+      { "command": "inSourceCompanion.isolateTest", "title": "Isolate Test", "category": "In-Source Companion", "icon": "$(go-to-file)" },
+      { "command": "inSourceCompanion.checkScrub", "title": "Check That Tests Are Scrubbed From the Build", "category": "In-Source Companion" }
+    ],
+    "menus": {
+      "testing/item/context": [
+        { "command": "inSourceCompanion.isolateTest" },
+        { "command": "inSourceCompanion.showDisplay" }
+      ],
+      "testing/item/gutter": [
+        { "command": "inSourceCompanion.isolateTest" }
+      ],
+      "editor/context": [
+        { "command": "inSourceCompanion.isolateTest", "when": "editorLangId =~ /^(type|java)script(react)?$/", "group": "navigation@90" }
+      ]
+    },
+    "configuration": {
+      "title": "In-Source Companion",
+      "properties": {
+        "inSourceCompanion.checkScrubOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "After saving a file with in-source tests, build the project twice (as configured, and with its tests deleted) and mark whatever makes the two differ."
+        },
+        "inSourceCompanion.nodePath": {
+          "type": "string",
+          "default": "node",
+          "description": "The Node.js executable that runs the in-source-companion command line. It needs Node 23.6 or later, which runs TypeScript directly."
+        },
+        "inSourceCompanion.cliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the in-source-companion command line. Empty: resolve the in-source-companion package from the project."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "install-extension": "node install.mjs"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "esbuild": "^0.28.0"
+  }
+}
