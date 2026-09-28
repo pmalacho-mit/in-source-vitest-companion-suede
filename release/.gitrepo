@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pmalacho-mit/in-source-vitest-companion-suede
+	branch = release
+	commit = 26c425edaf1958a6768332ea1f6049b1d612720b
+	parent = de19154a971acf9cc19cd5e8e7e910996162f941
+	method = merge
+	cmdver = 0.4.9
